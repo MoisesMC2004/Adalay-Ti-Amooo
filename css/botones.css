@@ -1,0 +1,326 @@
+/* ========================================
+   BOTONES ESTILO MATERIAL DESIGN MODERNO
+   ======================================== */
+
+/* Contenedor de botones */
+.wrapper,
+.wrapperr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.wrapperr {
+    margin-top: 20px;
+}
+
+.wrapper {
+    margin-top: 50px;
+}
+
+/* Botón principal - Diseño Material Design */
+button,
+.buttonn {
+    /* Tamaño y forma */
+    width: 200px;
+    height: 56px;
+    border: 2px solid transparent;
+    border-radius: 28px;
+    
+    /* Colores pasteles hermosos */
+    background: linear-gradient(135deg, #fff0f7 0%, #ffd1e8 50%, #fff1f8 100%);
+    
+    /* Tipografía */
+    color: #6b2d5c;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    
+    /* Comportamiento */
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    
+    /* Sombra Material Design */
+    box-shadow: 
+        0 4px 8px rgba(255, 182, 217, 0.4),
+        0 2px 4px rgba(255, 182, 217, 0.3);
+    
+    /* Transiciones suaves */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Animación periódica de pulso */
+    animation: pulsoSuave 3s ease-in-out infinite;
+}
+
+.buttonn {
+    width: 160px;
+    margin: 0;
+}
+
+/* Animación de pulso suave periódica */
+@keyframes pulsoSuave {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 
+            0 0 20px rgba(255, 182, 217, 0.4),
+            0 0 20px rgba(255, 182, 217, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 
+            0px 0px 40px rgba(255, 142, 197, 0.5),
+            0px 0px 40px rgba(255, 142, 197, 0.4);
+    }
+}
+
+/* Efecto de brillo animado */
+button::before,
+.buttonn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        70deg,
+        transparent,
+        rgb(255, 255, 255),
+        transparent
+    );
+    transition: left 0.6s ease;
+    animation: brilloAutomatico 4s ease-in-out infinite;
+}
+
+@keyframes brilloAutomatico {
+    0%, 100% {
+        left: -100%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    30% {
+        left: 100%;
+        opacity: 1;
+    }
+    31%, 99% {
+        opacity: 0;
+    }
+}
+
+/* Capa de overlay para efectos */
+button::after,
+.buttonn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 182, 217, 0.3) 50%, transparent 100%);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s ease-out;
+    opacity: 0;
+    z-index: 0;
+}
+
+/* Partículas brillantes decorativas */
+.wrapper::before,
+.wrapperr::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffb3d9;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 
+        0 0 10px #ffb3d9,
+        0 0 20px #ffc9e6;
+}
+
+.wrapper button:hover ~ ::before,
+.wrapperr button:hover ~ ::before {
+    animation: particulas1 0.8s ease-out forwards;
+}
+
+/* Enlaces dentro de botones */
+button a,
+.buttonn a {
+    color: #6b2d5c;
+    text-decoration: none;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(107, 45, 92, 0.5);
+}
+
+.buttonn a {
+    padding: 18px 30px;
+}
+
+/* Texto en hover */
+button:hover a,
+.buttonn:hover a {
+    color: #8b3d6c;
+    text-shadow: 
+        0 2px 4px rgba(107, 45, 92, 0.3),
+        0 0 8px rgba(255, 182, 217, 0.5);
+    letter-spacing: 2.5px;
+}
+
+/* Hover - Elevación Material Design Mejorada */
+button:hover,
+.buttonn:hover {
+    /* Elevación aumentada con rotación sutil */
+    transform: translateY(-6px) scale(1.08) rotate(-1deg);
+    box-shadow: 
+        0 8px 20px rgba(255, 142, 197, 0.4),
+        0 4px 12px rgba(255, 142, 197, 0.3),
+        0 0 40px rgba(255, 182, 217, 0.6),
+        0 0 20px rgba(255, 200, 230, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.3);
+    
+    /* Gradiente más brillante con efecto neón */
+    background: linear-gradient(135deg, #ffe5f4 0%, #ffd1ea 50%, #ffe0f0 100%);
+    
+    /* Pausar animación de pulso */
+    animation-play-state: paused;
+    
+    /* Borde sutil brillante */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Efecto ripple mejorado al hover */
+button:hover::after,
+.buttonn:hover::after {
+    width: 400px;
+    height: 400px;
+    opacity: 1;
+}
+
+/* Animación de rebote suave en hover */
+button:hover,
+.buttonn:hover {
+    animation: reboteHover 0.6s ease-out;
+}
+
+@keyframes reboteHover {
+    0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+    40% {
+        transform: translateY(-8px) scale(1.1) rotate(-2deg);
+    }
+    60% {
+        transform: translateY(-4px) scale(1.06) rotate(-0.5deg);
+    }
+    100% {
+        transform: translateY(-6px) scale(1.08) rotate(-1deg);
+    }
+}
+
+/* Brillo intenso en hover */
+button:hover::before,
+.buttonn:hover::before {
+    animation: brilloHover 0.8s ease-in-out;
+}
+
+@keyframes brilloHover {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+/* Active/Click - Presionado */
+button:active,
+.buttonn:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 6px 12px rgba(255, 142, 197, 0.4),
+        0 3px 6px rgba(255, 142, 197, 0.3);
+}
+
+/* Focus - Accesibilidad */
+button:focus-visible,
+.buttonn:focus-visible {
+    outline: 3px solid #ffb3d9;
+    outline-offset: 3px;
+}
+
+/* Animación de entrada suave */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button,
+.buttonn {
+    animation: 
+        aparecer 0.6s ease-out,
+        pulsoSuave 3s ease-in-out 0.6s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    button,
+    .buttonn {
+        width: 180px;
+        height: 52px;
+        font-size: 12px;
+    }
+    
+    .buttonn {
+        width: 150px;
+    }
+    
+    .wrapper,
+    .wrapperr {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    button,
+    .buttonn {
+        width: 160px;
+        height: 48px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+    
+    .buttonn {
+        width: 140px;
+    }
+}
+

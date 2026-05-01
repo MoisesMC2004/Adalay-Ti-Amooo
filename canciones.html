@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regresa cada mesgfdfg! ♡</title>
+    <link rel="icon" href="img/canciones.png" type="image/x-icon">
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/canciones.css">
+    <link rel="stylesheet" href="css/botones.css">
+</head>
+
+<body>
+    <!-- Fondo de estrellas fugaces -->
+    <div class="shooting-stars">
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+    </div>
+
+    <!-- Fondo de corazones flotantes -->
+    <div class="floating-hearts">
+        <div class="heart-float">♥</div>
+        <div class="heart-float">♥</div>
+        <div class="heart-float">♥</div>
+        <div class="heart-float">♥</div>
+        <div class="heart-float">♥</div>
+        <div class="heart-float">♥</div>
+        <div class="heart-float">♥</div>
+        <div class="heart-float">♥</div>
+    </div>
+
+    <main class="canciones-container">
+        <!-- Título -->
+        <h1 class="titulo-principal">Siguiente canción en:</h1>
+
+        <!-- Contador -->
+        <div class="contador">
+            <div class="tiempo-item">
+                <span class="tiempo-valor" id="dias">00</span>
+                <span class="tiempo-label">Días</span>
+            </div>
+            <div class="tiempo-item">
+                <span class="tiempo-valor" id="horas">00</span>
+                <span class="tiempo-label">Horas</span>
+            </div>
+            <div class="tiempo-item">
+                <span class="tiempo-valor" id="minutos">00</span>
+                <span class="tiempo-label">Minutos</span>
+            </div>
+            <div class="tiempo-item">
+                <span class="tiempo-valor" id="segundos">00</span>
+                <span class="tiempo-label">Segundos</span>
+            </div>
+        </div>
+
+        <!-- Contenedores de canciones (12 meses) -->
+        <div class="contenedor-canciones">
+            <div class="cancion-mes" data-mes="9">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes1.svg" alt="Canción del Mes 1">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Just The Way You Are.</h2>
+                    <p class="mes-descripcion">Primer mes, primera canción, y qué mejor que "Just the way you are" para
+                        recordarte que eres increíblemente hermosa justo como tú eres!<br><br>No necesitas cambiar
+                        absolutamente nada en ti, eres preciosa!<br>Te amo mi niña ♡</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="10">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes2.svg" alt="Canción del Mes 2">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Bemaste.</h2>
+                    <p class="mes-descripcion">Poco más de 4 meses de conocerte, es increíble lo rápido que pasa el
+                        tiempo! <br><br>Te dejo esta cancioncita para que recuerdes el cambio que le diste a mi vida, te
+                        amo! <3< /p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="11">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes3.svg" alt="Canción del Mes 3">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Beautiful Things.</h2>
+                    <p class="mes-descripcion">Llegamos a diciembre, y qué mejor que esta canción, ya que como la misma
+                        lo dice "Por un tiempo fue duro, pero últimamente me ha ido mejor, que los últimos cuatro fríos
+                        diciembres", y ¿por qué me ha ido mejor? Porque ahora estás tú! <br><br>Te amo princesa.</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="0">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes4.svg" alt="Canción del Mes 4">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Thinking Out Loud.</h2>
+                    <p class="mes-descripcion">Comenzamos un nuevo año juntos y si, adivinaste! Hay una nueva canción
+                        para ti. <br><br>Vamos por buen camino, y cada vez somos mejores juntos!<br>Te amo caliño ♡</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="1">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes5.svg" alt="Canción del Mes 5">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Those Eyes.</h2>
+                    <p class="mes-descripcion">El mes del amor merece una canción especial, y qué mejor que esta!
+                        <br><br>Para que nunca olvides que cada cosa pequena, cada sonrisa, cada mirada, cada momento,
+                        son las cosas que me hacen recordar el amor tan inmenso que siento por ti. <br> Te amo mi amor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="2">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes6.svg" alt="Canción del Mes 6">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">M.A.I</h2>
+                    <p class="mes-descripcion">Casi medio año de conocernos, medio año de momentos
+                        inolvidables.<br><br>Eres la mejor, hermosa, te adolo y te amo mucho!</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="3">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes7.svg" alt="Canción del Mes 7">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Yellow.</h2>
+                    <p class="mes-descripcion">Wow! Llegamos a abril ya, todo a avanzado super bonito, y estamos en
+                        camino a nuestro primer añito juntos! <br><br>Gracias por ser mi amore, te amo mucho!</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="4">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes8.svg" alt="Canción del Mes 8">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Contigo</h2>
+                    <p class="mes-descripcion">Mayo... ¡Cada vez falta menos para celebrar nuestro primer
+                        aniversario!<br><br>Hemos pasado muchas cosas juntos, malos acuerdos, algunas pequeñas
+                        discusiones, pero también momentos hermosos y que siempre tendré en mi mente y en mi corazón.
+                        Espero que tú también... Quería decirte cuánto te amo, y creo que la canción de este mes
+                        explica bastante bien muchas de las cosas que siento por ti, mi princesita ♡</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="5">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes9.svg" alt="Canción del Mes 9">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Mes 9</h2>
+                    <p class="mes-descripcion">Nueve meses de amor, risas y complicidad.</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="6">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes10.svg" alt="Canción del Mes 10">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Mes 10</h2>
+                    <p class="mes-descripcion">Una canción de verano para disfrutar juntos.</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="7">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes11.svg" alt="Canción del Mes 11">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Mes 11</h2>
+                    <p class="mes-descripcion">Casi un año juntos, y cada día es mejor.</p>
+                </div>
+            </div>
+
+            <div class="cancion-mes" data-mes="8">
+                <div class="cancion-imagen">
+                    <img src="img/SVG/cancion-mes12.svg" alt="Canción del Mes 12">
+                </div>
+                <div class="cancion-contenido">
+                    <h2 class="mes-titulo">Mes 12</h2>
+                    <p class="mes-descripcion">Un año completo de amor. Gracias por cada momento.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de navegación -->
+        <div class="wrapper">
+            <button class="buttonn">
+                <a href="flores.html">ATRÁS!</a>
+            </button>
+            <button class="buttonn">
+                <a href="index.html">INICIO</a>
+            </button>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script src="js/canciones.js"></script>
+</body>
+
+</html>
