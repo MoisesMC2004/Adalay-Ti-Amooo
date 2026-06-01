@@ -31,3 +31,149 @@ body {
     background: #ff006f;
 }
 
+/* ==========================================================================
+   FONDO DE PARTÍCULAS COMPARTIDO (Estrellas Fugaces y Corazones Flotantes)
+   Optimizado para GPU y dispositivos móviles
+   ========================================================================== */
+
+/* Contenedor de estrellas fugaces */
+.shooting-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Estrella fugaz individual */
+.shooting-star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: linear-gradient(90deg, #fff, transparent);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px 2px rgba(255, 255, 255, 0.8),
+        0 0 20px 4px rgba(255, 182, 217, 0.6),
+        0 0 30px 6px rgba(255, 200, 230, 0.4);
+    filter: blur(5px);
+    animation: shootingStar 3s linear infinite;
+    /* Aceleración por hardware */
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.8) 0%, 
+        rgba(255, 182, 217, 0.6) 30%,
+        rgba(255, 200, 230, 0.3) 60%,
+        transparent 100%);
+    transform: translateX(3px);
+    filter: blur(5px);
+    will-change: transform;
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(-45deg);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(-1000px, 1000px, 0) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* Cada estrella tiene diferentes tiempos y posiciones */
+.shooting-star:nth-child(1) { top: 10%; right: 10%; animation-delay: -0.5s; animation-duration: 2.5s; }
+.shooting-star:nth-child(2) { top: 20%; right: 30%; animation-delay: -1.2s; animation-duration: 3s; }
+.shooting-star:nth-child(3) { top: 5%; right: 50%; animation-delay: -2s; animation-duration: 2.8s; }
+.shooting-star:nth-child(4) { top: 30%; right: 70%; animation-delay: -0.8s; animation-duration: 3.2s; }
+.shooting-star:nth-child(5) { top: 15%; right: 20%; animation-delay: -1.5s; animation-duration: 2.6s; }
+.shooting-star:nth-child(6) { top: 40%; right: 40%; animation-delay: -2.5s; animation-duration: 3.5s; }
+.shooting-star:nth-child(7) { top: 25%; right: 60%; animation-delay: -1.8s; animation-duration: 2.9s; }
+.shooting-star:nth-child(8) { top: 50%; right: 15%; animation-delay: -0.3s; animation-duration: 3.3s; }
+.shooting-star:nth-child(9) { top: 8%; right: 80%; animation-delay: -2.2s; animation-duration: 2.7s; }
+.shooting-star:nth-child(10) { top: 35%; right: 50%; animation-delay: -1s; animation-duration: 3.1s; }
+
+/* Contenedor de corazones flotantes */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Corazón flotante individual */
+.heart-float {
+    position: absolute;
+    font-size: 30px;
+    color: rgba(255, 182, 217, 0.5);
+    filter: blur(10px);
+    animation: floatingHeart 4s ease-in-out infinite;
+    /* Aceleración por hardware */
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+}
+
+@keyframes floatingHeart {
+    0%, 100% {
+        transform: scale(0.8) translate3d(0, 0, 0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.5) translate3d(0, -20px, 0);
+        opacity: 0.7;
+    }
+}
+
+/* Posiciones y delays únicos para cada corazón */
+.heart-float:nth-child(1) { top: 15%; left: 10%; font-size: 80px; animation-delay: -1s; animation-duration: 4s; }
+.heart-float:nth-child(2) { top: 60%; left: 20%; font-size: 40px; animation-delay: -2.5s; animation-duration: 4.5s; }
+.heart-float:nth-child(3) { top: 30%; left: 80%; font-size: 120px; animation-delay: -0.5s; animation-duration: 3.8s; }
+.heart-float:nth-child(4) { top: 70%; left: 70%; font-size: 35px; animation-delay: -3s; animation-duration: 4.2s; }
+.heart-float:nth-child(5) { top: 20%; left: 50%; font-size: 90px; animation-delay: -1.8s; animation-duration: 4.3s; }
+.heart-float:nth-child(6) { top: 80%; left: 40%; font-size: 45px; animation-delay: -3.5s; animation-duration: 3.9s; }
+.heart-float:nth-child(7) { top: 40%; left: 90%; font-size: 100px; animation-delay: -2s; animation-duration: 4.1s; }
+.heart-float:nth-child(8) { top: 50%; left: 15%; font-size: 50px; animation-delay: -1.2s; animation-duration: 4.4s; }
+
+/* ==========================================================================
+   MEDIA QUERIES DE RENDIMIENTO MÓVIL (Suavizado de Blurs pesados)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .shooting-star {
+        filter: blur(2px); /* Reducción de desenfoque pesadísimo para GPU móvil */
+        box-shadow: 
+            0 0 6px 1px rgba(255, 255, 255, 0.8),
+            0 0 12px 2px rgba(255, 182, 217, 0.6);
+    }
+    
+    .shooting-star::before {
+        width: 90px; /* Estela más corta para ahorrar área de pintado */
+        filter: blur(2px);
+    }
+    
+    .heart-float {
+        filter: blur(3px); /* Reducción de 10px a 3px para óptimo rendimiento */
+    }
+}
+

@@ -46,6 +46,8 @@ button,
     position: relative;
     padding: 0;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    will-change: transform, box-shadow;
     
     /* Sombra Material Design */
     box-shadow: 
@@ -175,50 +177,55 @@ button a,
     padding: 18px 30px;
 }
 
-/* Texto en hover */
-button:hover a,
-.buttonn:hover a {
-    color: #8b3d6c;
-    text-shadow: 
-        0 2px 4px rgba(107, 45, 92, 0.3),
-        0 0 8px rgba(255, 182, 217, 0.5);
-    letter-spacing: 2.5px;
-}
-
-/* Hover - Elevación Material Design Mejorada */
-button:hover,
-.buttonn:hover {
-    /* Elevación aumentada con rotación sutil */
-    transform: translateY(-6px) scale(1.08) rotate(-1deg);
-    box-shadow: 
-        0 8px 20px rgba(255, 142, 197, 0.4),
-        0 4px 12px rgba(255, 142, 197, 0.3),
-        0 0 40px rgba(255, 182, 217, 0.6),
-        0 0 20px rgba(255, 200, 230, 0.5),
-        inset 0 0 20px rgba(255, 255, 255, 0.3);
+/* Texto en hover (solo en dispositivos que soportan hover) */
+@media (hover: hover) {
+    button:hover a,
+    .buttonn:hover a {
+        color: #8b3d6c;
+        text-shadow: 
+            0 2px 4px rgba(107, 45, 92, 0.3),
+            0 0 8px rgba(255, 182, 217, 0.5);
+        letter-spacing: 2.5px;
+    }
     
-    /* Gradiente más brillante con efecto neón */
-    background: linear-gradient(135deg, #ffe5f4 0%, #ffd1ea 50%, #ffe0f0 100%);
+    /* Hover - Elevación Material Design Mejorada */
+    button:hover,
+    .buttonn:hover {
+        /* Elevación aumentada con rotación sutil */
+        transform: translateY(-6px) scale(1.08) rotate(-1deg);
+        box-shadow: 
+            0 8px 20px rgba(255, 142, 197, 0.4),
+            0 4px 12px rgba(255, 142, 197, 0.3),
+            0 0 40px rgba(255, 182, 217, 0.6),
+            0 0 20px rgba(255, 200, 230, 0.5),
+            inset 0 0 20px rgba(255, 255, 255, 0.3);
+        
+        /* Gradiente más brillante con efecto neón */
+        background: linear-gradient(135deg, #ffe5f4 0%, #ffd1ea 50%, #ffe0f0 100%);
+        
+        /* Pausar animación de pulso */
+        animation-play-state: paused;
+        
+        /* Borde sutil brillante */
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        
+        /* Animación de rebote suave en hover */
+        animation: reboteHover 0.6s ease-out;
+    }
     
-    /* Pausar animación de pulso */
-    animation-play-state: paused;
+    /* Efecto ripple mejorado al hover */
+    button:hover::after,
+    .buttonn:hover::after {
+        width: 400px;
+        height: 400px;
+        opacity: 1;
+    }
     
-    /* Borde sutil brillante */
-    border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-/* Efecto ripple mejorado al hover */
-button:hover::after,
-.buttonn:hover::after {
-    width: 400px;
-    height: 400px;
-    opacity: 1;
-}
-
-/* Animación de rebote suave en hover */
-button:hover,
-.buttonn:hover {
-    animation: reboteHover 0.6s ease-out;
+    /* Brillo intenso en hover */
+    button:hover::before,
+    .buttonn:hover::before {
+        animation: brilloHover 0.8s ease-in-out;
+    }
 }
 
 @keyframes reboteHover {
@@ -236,12 +243,6 @@ button:hover,
     }
 }
 
-/* Brillo intenso en hover */
-button:hover::before,
-.buttonn:hover::before {
-    animation: brilloHover 0.8s ease-in-out;
-}
-
 @keyframes brilloHover {
     0% {
         left: -100%;
@@ -256,14 +257,16 @@ button:hover::before,
     }
 }
 
-/* Active/Click - Presionado */
+/* Active/Click - Presionado (Optimizado para pantallas táctiles y clics rápidos) */
 button:active,
 .buttonn:active {
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(2px) scale(0.96) !important;
     box-shadow: 
-        0 6px 12px rgba(255, 142, 197, 0.4),
-        0 3px 6px rgba(255, 142, 197, 0.3);
+        0 2px 4px rgba(255, 142, 197, 0.2),
+        0 1px 2px rgba(255, 142, 197, 0.2) !important;
+    transition: transform 0.1s ease !important;
 }
+
 
 /* Focus - Accesibilidad */
 button:focus-visible,
