@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const starsContainer = document.createElement('div');
         starsContainer.className = 'shooting-stars';
         
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 6; i++) {
             const star = document.createElement('div');
             star.className = 'shooting-star';
             starsContainer.appendChild(star);
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const heartsContainer = document.createElement('div');
         heartsContainer.className = 'floating-hearts';
         
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 5; i++) {
             const heart = document.createElement('div');
             heart.className = 'heart-float';
             heart.textContent = '♥';

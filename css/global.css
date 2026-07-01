@@ -127,7 +127,7 @@ body {
     position: absolute;
     font-size: 30px;
     color: rgba(255, 182, 217, 0.5);
-    filter: blur(10px);
+    filter: blur(2px);
     animation: floatingHeart 4s ease-in-out infinite;
     /* Aceleración por hardware */
     will-change: transform, opacity;
@@ -175,5 +175,11 @@ body {
     .heart-float {
         filter: blur(3px); /* Reducción de 10px a 3px para óptimo rendimiento */
     }
+}
+
+/* Ocultar partículas con modal abierto para evitar lag con backdrop-filter */
+body.modal-open .shooting-stars,
+body.modal-open .floating-hearts {
+    display: none !important;
 }
 
