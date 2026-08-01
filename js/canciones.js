@@ -88,9 +88,9 @@ const CANCIONES_DB = [
         year: 2026,
         month: 7, // Agosto
         monthName: "Agosto",
-        titulo: "Mes 11",
+        titulo: "Don't Give Up On Me",
         imagen: "../img/SVG/cancion-mes11.svg",
-        descripcion: "Casi un año juntos, y cada día es mejor."
+        descripcion: "Casi un año juntos, muchos recuerdos, muchos aprendizajes, muchos momentos maravillosos y lo mejor, todo juntos! <br><br> Quiero que sepas que aunque a veces parezca dificil, yo siempre te elegire. No hay cosa que me haga sentir que ya no te necesito, lo eres todo para mi y quiero estar toda la vida a tu lado. <br><br> Te amo mi princesita <3."
     },
     {
         year: 2026,
