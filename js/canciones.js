@@ -88,7 +88,7 @@ const CANCIONES_DB = [
         year: 2026,
         month: 7, // Agosto
         monthName: "Agosto",
-        titulo: "Don't Give Up On Me",
+        titulo: "Don't Give Up On Me.",
         imagen: "../img/SVG/cancion-mes11.svg",
         descripcion: "Casi un año juntos, muchos recuerdos, muchos aprendizajes, muchos momentos maravillosos y lo mejor, todo juntos! <br><br> Quiero que sepas que aunque a veces parezca dificil, yo siempre te elegire. No hay cosa que me haga sentir que ya no te necesito, lo eres todo para mi y quiero estar toda la vida a tu lado. <br><br> Te amo mi princesita <3."
     },
@@ -96,9 +96,9 @@ const CANCIONES_DB = [
         year: 2026,
         month: 8, // Septiembre
         monthName: "Septiembre",
-        titulo: "Mes 12",
+        titulo: "God Was Showing Off.",
         imagen: "../img/SVG/cancion-mes12.svg",
-        descripcion: "Un año completo de amor. Gracias por cada momento."
+        descripcion: "Oficialmente ha pasado ya 1 añito! Quien lo diria, ha pasado el tiempo demasiado rapido, aunque es extraño ya que siempre que estoy contigo el mundo a mi al rededor se detiene. <br><br>Llevo un año contigo y parece que apenas nos comenzamos a conocer, y es extraño porque por dios, me encanta conocerte cada dia mas!<br><br>Muchos dicen que el amor es mucha felicidad, reir a carcajadas, pero, algunos odian los momentos 'raros' de una relacion, lo extraño es que yo disfruto los dias callados, los dias cuando cada quien esta haciendo las cosas que le gustan, amo esos momentos donde somos 'compañeros de trabajo' y cada quien realiza sus ocupaciones, porque a pesar de que estemos serios, en silencio, o metidos en alguna cosa que estemos haciendo, el hecho de estar juntos lo hace sentir especial.<br><br>Te amo, y te agradezco todo este tiempo a mi lado, espero haber estado a la altura durante este ultimo año, aunque no te acostumbres... Hare de todo para que siempre sea mejor!<br><br><br>PD: Se que aun la sorpresa que le agregaria a la pagina y el video de la expicacion de los regalos aun no han llegado... Me conoces, y sabes que si algo aun no me convence sigo trabajando en ello para mejorarlo y asi esta siendo, y no, no te preocupes, seras la primera en descubrirlo.<br><br>Sin nada mas que decir, te amo mucho amor, por una vida juntos <3"
     }
 ];
 
