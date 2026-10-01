@@ -99,6 +99,14 @@ const CANCIONES_DB = [
         titulo: "God Was Showing Off.",
         imagen: "../img/SVG/cancion-mes12.svg",
         descripcion: "Oficialmente ha pasado ya 1 añito! Quien lo diria, ha pasado el tiempo demasiado rapido, aunque es extraño ya que siempre que estoy contigo el mundo a mi al rededor se detiene. <br><br>Llevo un año contigo y parece que apenas nos comenzamos a conocer, y es extraño porque por dios, me encanta conocerte cada dia mas!<br><br>Muchos dicen que el amor es mucha felicidad, reir a carcajadas, y pasar grandes momentos juntos, Y TIENEN RAZON! pero algunos odian los momentos 'raros' de una relacion, lo extraño es que yo disfruto los dias callados, los dias cuando cada quien esta haciendo las cosas que le gustan, amo esos momentos donde somos 'compañeros de trabajo' y cada quien realiza sus ocupaciones, porque a pesar de que estemos serios, en silencio, o metidos en alguna cosa que estemos haciendo, el hecho de estar juntos lo hace sentir especial.<br><br>Te amo, y te agradezco todo este tiempo a mi lado, espero haber estado a la altura durante este ultimo año, aunque no te acostumbres... Hare de todo para que siempre sea mejor!<br><br><br>PD: Se que aun la sorpresa que le agregaria a la pagina y el video de la expicacion de los regalos aun no han llegado... Me conoces, y sabes que si algo aun no me convence sigo trabajando en ello para mejorarlo y asi esta siendo, y no, no te preocupes, seras la primera en descubrirlo.<br><br>Sin nada mas que decir, te amo mucho amor, por una vida juntos <3"
+    },
+    {
+        year: 2026,
+        month: 9, // Octubre
+        monthName: "Octubre",
+        titulo: "We Fell In Love In October.",
+        imagen: "../img/SVG/cancion-mes13.svg",
+        descripcion: "Octubre, mas de 1 año de conocerte, es increible lo rapido que pasa el tiempo, pero te sigo amando igual o incluso mas que la primera vez.<br>Eres todo lo que siempre soñe, eres mi felicidad entera y toda mi vida voy a amarte. Gracias por todo, gracias por siempre estar conmigo y gracias por amarme como lo haces.<br><br>Te amo y te extraño mi bebita <3"
     }
 ];
 
