@@ -1,0 +1,363 @@
+/* ==========================================================================
+   ESTILOS PARA LOS POPUPS / RECADOS (ADALAY V3)
+   Diseño responsivo, elegante, modo oscuro con acentos pasteles y glassmorphism
+   ========================================================================== */
+
+/* Contenedor del Modal / Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 5, 12, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Tarjeta del Popup */
+.popup-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: linear-gradient(145deg, rgba(32, 16, 42, 0.94) 0%, rgba(18, 9, 24, 0.97) 100%);
+    border: 1px solid rgba(255, 182, 217, 0.35);
+    border-radius: 28px;
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.75),
+        0 0 40px rgba(255, 142, 197, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    padding: 36px 30px 32px;
+    text-align: center;
+    color: #fff;
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.popup-overlay.active .popup-card {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* Botón cerrar (X) */
+button.popup-close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 220, 238, 0.65) !important;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    box-shadow: none !important;
+    animation: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+button.popup-close::before,
+button.popup-close::after {
+    display: none !important;
+}
+
+button.popup-close:hover {
+    color: #ffffff !important;
+    background: rgba(255, 182, 217, 0.18) !important;
+    transform: scale(1.1);
+}
+
+/* Cabecera / Indicador */
+.popup-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.popup-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 182, 217, 0.12);
+    border: 1px solid rgba(255, 182, 217, 0.25);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffd6eb;
+    text-shadow: 0 0 10px rgba(255, 182, 217, 0.4);
+}
+
+/* Indicador de pasos (puntos) */
+.popup-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.popup-dot.active {
+    width: 24px;
+    background: #ffb6d9;
+    box-shadow: 0 0 12px #ff8ec5;
+}
+
+/* Contenido del mensaje */
+.popup-body {
+    min-height: 125px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    padding: 0 10px;
+}
+
+.popup-message {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #fff2f8;
+    text-shadow: 0 0 14px rgba(255, 182, 217, 0.2);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    word-break: break-word;
+}
+
+/* Estado de transición de texto */
+.popup-message.fade-out {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.popup-message.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Estilo especial para la firma en el mensaje 4 */
+.popup-message.special-sign {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.special-sign .sign-intro {
+    font-size: 1.15rem;
+    color: #ffc9e6;
+}
+
+.special-sign .sign-name {
+    font-family: 'Marck Script', cursive;
+    font-size: 2.6rem;
+    color: #ffffff;
+    text-shadow: 0 0 20px #ffb3d9, 0 0 35px #ff8ec5;
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.special-sign .heart-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ff9ecf;
+    text-shadow: 0 0 15px #ff70b5;
+    letter-spacing: -1px;
+}
+
+/* Acciones / Botones */
+.popup-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Botón siguiente con estilo Adalay */
+button.btn-popup-next {
+    width: 190px !important;
+    height: 50px !important;
+    border: none !important;
+    border-radius: 25px !important;
+    background: linear-gradient(135deg, #fff0f7 0%, #ffd1e8 50%, #fff1f8 100%) !important;
+    color: #521844 !important;
+    font-size: 13px !important;
+    letter-spacing: 2px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    cursor: pointer;
+    box-shadow: 
+        0 4px 14px rgba(255, 182, 217, 0.45),
+        0 0 20px rgba(255, 182, 217, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    animation: pulsoSuave 3s ease-in-out infinite !important;
+    margin: 0 !important;
+}
+
+button.btn-popup-next:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 6px 18px rgba(255, 142, 197, 0.6),
+        0 0 30px rgba(255, 142, 197, 0.4) !important;
+}
+
+button.btn-popup-next:active {
+    transform: scale(0.97);
+}
+
+/* Botón atrás secundario */
+button.btn-popup-prev {
+    background: transparent !important;
+    border: 1px solid rgba(255, 182, 217, 0.35) !important;
+    color: #ffc9e6 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    padding: 0 20px !important;
+    height: 48px !important;
+    width: auto !important;
+    min-width: 110px !important;
+    border-radius: 24px !important;
+    cursor: pointer;
+    box-shadow: none !important;
+    animation: none !important;
+    transition: all 0.25s ease !important;
+    margin: 0 !important;
+}
+
+button.btn-popup-prev::before,
+button.btn-popup-prev::after {
+    display: none !important;
+}
+
+button.btn-popup-prev:hover {
+    background: rgba(255, 182, 217, 0.14) !important;
+    border-color: rgba(255, 182, 217, 0.65) !important;
+    color: #ffffff !important;
+    transform: scale(1.02);
+}
+
+button.btn-popup-prev:active {
+    transform: scale(0.97);
+}
+
+button.btn-popup-prev.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media screen and (max-width: 540px) {
+    .popup-card {
+        padding: 28px 20px 24px;
+        border-radius: 24px;
+        max-width: 92%;
+    }
+
+    .popup-badge {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        padding: 5px 12px;
+    }
+
+    .popup-message {
+        font-size: 1.02rem;
+        line-height: 1.6;
+    }
+
+    .special-sign .sign-intro {
+        font-size: 1.05rem;
+    }
+
+    .special-sign .sign-name {
+        font-size: 2.1rem;
+    }
+
+    .popup-body {
+        min-height: 105px;
+        margin-bottom: 22px;
+    }
+
+    .popup-actions {
+        gap: 10px;
+        flex-direction: column-reverse;
+    }
+
+    button.btn-popup-next {
+        width: 100% !important;
+        height: 48px !important;
+    }
+
+    button.btn-popup-prev {
+        width: 100% !important;
+        height: 42px !important;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .popup-message {
+        font-size: 0.92rem;
+    }
+    
+    .popup-badge {
+        font-size: 9px;
+    }
+}
